@@ -8,14 +8,26 @@ public class Time {
     private static int tickCounter = 0;
     private static boolean isTimeFrozen = false;
 
-    private static final int TICKS_PER_MINUTES = 20;
+    private static int TICKS_PER_MINUTES = 20;
 
+    //get
     public static int getHours() {return customHours;}
     public static int getMinutes() {return customMinutes;}
+    public static int getTicksPerMinutes() {return TICKS_PER_MINUTES;}
     public static String getTime() {return String.format("%02d:%02d", customHours, customMinutes);}
 
+    //set
     public static void setTimeFrozen(boolean frozen){
         isTimeFrozen = frozen;
+    }
+    public static void setCustomHours(int hours){
+        customHours = hours;
+    }
+    public static void setCustomMinutes(int minutes){
+        customMinutes = minutes;
+    }
+    public static void setTicksPerMinutes(int ticksPerMinutes){
+        TICKS_PER_MINUTES = ticksPerMinutes;
     }
 
     public static boolean isFrozen() {

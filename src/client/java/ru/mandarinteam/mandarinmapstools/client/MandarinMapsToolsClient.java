@@ -9,6 +9,6 @@ public class MandarinMapsToolsClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		System.out.println("MandarinMapsToolsClient initializeClient");
 
-		Hud_watch.register();
+		//Hud_watch.register();
 	}
 }
