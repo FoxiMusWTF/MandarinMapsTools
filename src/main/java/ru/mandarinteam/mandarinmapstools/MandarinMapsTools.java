@@ -2,11 +2,13 @@ package ru.mandarinteam.mandarinmapstools;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.resources.ResourceLocation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.mandarinteam.mandarinmapstools.manager.CommandManager;
 import ru.mandarinteam.mandarinmapstools.utils.time.Time;
 
 public class MandarinMapsTools implements ModInitializer {
@@ -24,6 +26,10 @@ public class MandarinMapsTools implements ModInitializer {
 		// Proceed with mild caution.
 
 		LOGGER.info("Hello Fabric world!");
+
+		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+			CommandManager.registerCommands(dispatcher, registryAccess, environment);
+		});
 
 		ServerTickEvents.END_SERVER_TICK.register(server -> {
 			Time.tick();

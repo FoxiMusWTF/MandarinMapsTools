@@ -1,27 +1,28 @@
-package ru.mandarinteam.mandarinmapstools.client.commands;
+package ru.mandarinteam.mandarinmapstools.commands;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
+import ru.mandarinteam.mandarinmapstools.utils.time.Time;
 
-public class TestCommand {
+public class TimeCommand {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher){
         var rootCommand = Commands.literal("tools")
                 .requires(source -> source.hasPermission(2));
 
-        var testSubCommand = Commands.literal("test")
-                .executes(TestCommand::run);
+        var timeSubCommand = Commands.literal("time")
+                .executes(TimeCommand::runGetTime);
 
-        rootCommand.then(testSubCommand);
+        rootCommand.then(timeSubCommand);
 
         dispatcher.register(rootCommand);
     }
 
-    private static int run(CommandContext<CommandSourceStack> context){
-        context.getSource().sendSuccess(() -> Component.literal("Test"), false);
+    private static int runGetTime(CommandContext<CommandSourceStack> context){
+        context.getSource().sendSuccess(() -> Component.literal("Сейчас " + Time.getTime()), false);
 
         return 1;
     }

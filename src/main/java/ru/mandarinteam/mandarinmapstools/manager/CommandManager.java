@@ -1,12 +1,12 @@
-package ru.mandarinteam.mandarinmapstools.client.manager;
+package ru.mandarinteam.mandarinmapstools.manager;
 
 import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import ru.mandarinteam.mandarinmapstools.client.commands.FrezeeCommand;
-import ru.mandarinteam.mandarinmapstools.client.commands.TestCommand;
-import ru.mandarinteam.mandarinmapstools.client.commands.TimeCommand;
+import ru.mandarinteam.mandarinmapstools.commands.FrezeeCommand;
+import ru.mandarinteam.mandarinmapstools.commands.TestCommand;
+import ru.mandarinteam.mandarinmapstools.commands.TimeCommand;
 
 public class CommandManager {
 
