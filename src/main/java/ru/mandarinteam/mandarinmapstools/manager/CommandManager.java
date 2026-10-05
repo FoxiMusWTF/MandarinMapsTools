@@ -5,6 +5,7 @@ import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import ru.mandarinteam.mandarinmapstools.commands.FrezeeCommand;
+import ru.mandarinteam.mandarinmapstools.commands.HudCommand;
 import ru.mandarinteam.mandarinmapstools.commands.TestCommand;
 import ru.mandarinteam.mandarinmapstools.commands.TimeCommand;
 
@@ -17,6 +18,7 @@ public class CommandManager {
         TestCommand.register(dispatcher);
         TimeCommand.register(dispatcher);
         FrezeeCommand.register(dispatcher);
+        HudCommand.register(dispatcher);
     }
 
 }

@@ -4,10 +4,12 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.minecraft.resources.ResourceLocation;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ru.mandarinteam.mandarinmapstools.api.network.HudSyncPayload;
 import ru.mandarinteam.mandarinmapstools.manager.CommandManager;
 import ru.mandarinteam.mandarinmapstools.utils.time.Time;
 
