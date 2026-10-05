@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
+import ru.mandarinteam.mandarinmapstools.client.manager.HudManager;
 import ru.mandarinteam.mandarinmapstools.utils.time.Time;
 
 public class Hud_watch implements HudRenderCallback {
@@ -21,6 +22,12 @@ public class Hud_watch implements HudRenderCallback {
 
     @Override
     public void onHudRender(GuiGraphics drawContext, DeltaTracker tickCounter) {
+
+        boolean watchIsVisibleClient = HudManager.watchIsVisibleClient;
+
+        if (!watchIsVisibleClient){
+            return;
+        }
 
         Minecraft minecraft = Minecraft.getInstance();
 
